@@ -1,12 +1,17 @@
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { HowToRegTwoTone, Rowing } from "@mui/icons-material";
+import { HowToRegTwoTone } from "@mui/icons-material";
 import { Divider } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function RegisterHere() {
+  const navigate = useNavigate();
+
+  const handleRegisterPage = () => {
+    navigate("/register");
+  };
+
   return (
     <Stack
       spacing={2}
@@ -14,14 +19,13 @@ function RegisterHere() {
       sx={{ width: { xs: "100%", sm: "70%" } }}
       flexDirection={"column"}
       alignItems={"center"}
-      >
+    >
       <Divider />
       <Typography
         alignSelf="center"
         component="span"
         variant="h1"
         sx={{
-          color: "black",
           fontSize: "clamp(1rem, 4vw, 3rem)",
           fontWeight: "400", // Medium bold text
           color: (theme) =>
@@ -32,7 +36,7 @@ function RegisterHere() {
       </Typography>
       <Divider />
       <Stack flexDirection="row">
-        <HowToRegTwoTone />
+        <HowToRegTwoTone color="primary" />
         <Typography
           alignSelf="center"
           component="span"
@@ -62,17 +66,14 @@ function RegisterHere() {
         useFlexGap
         sx={{ pt: 2, width: { xs: "70%", sm: "auto" } }}
       >
-        <Button variant="contained" color="error" >
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleRegisterPage}
+        >
           Register Here
         </Button>
       </Stack>
-      <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-        By clicking &quot;Start now&quot; you agree to our&nbsp;
-        <Link href="#" color="primary">
-          Terms & Conditions
-        </Link>
-        .
-      </Typography>
     </Stack>
   );
 }

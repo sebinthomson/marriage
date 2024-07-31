@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -6,11 +5,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </>
   )
 );
