@@ -7,12 +7,6 @@ function ImageUpload({ isChecked, selectedFile, setSelectedFile }) {
     setSelectedFile(file);
   };
 
-  const handleUploadClick = () => {
-    if (selectedFile) {
-      console.log(selectedFile);
-    }
-  };
-
   return (
     <Box
       sx={{
@@ -44,16 +38,6 @@ function ImageUpload({ isChecked, selectedFile, setSelectedFile }) {
               style={{ width: "100%", maxWidth: "300px", height: "auto" }}
             />
           </Box>
-          {isChecked && (
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleUploadClick}
-              disabled={!selectedFile}
-            >
-              Upload
-            </Button>
-          )}
         </>
       )}
     </Box>
